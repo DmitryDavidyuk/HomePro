@@ -1,0 +1,177 @@
+//=============hero=======================================================================================
+.hero {
+  background-color: $bgColor;
+  padding: toRem(80) toRem(16) toRem(60) toRem(16);
+  min-height: 100vh;
+  display: grid;
+  position: relative;
+  @media (min-width: $tablet) {
+    grid-template-columns: auto 1fr auto;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url("@img/hero/decor.svg");
+      background-repeat: no-repeat;
+      height: toRem(46);
+      width: 100%;
+      bottom: -1px;
+    }
+
+    &::after {
+      transform: rotateY(180deg);
+      @include adaptiveValue("left", 0, 500);
+    }
+    &::before {
+      @include adaptiveValue("right", 0, 500);
+    }
+  }
+
+  // .hero__image
+  &__image-ibg {
+    @include adaptiveValue("width", 412, 200, 0, $containerWidth, 991.98);
+    border-radius: toRem(26);
+    overflow: hidden;
+
+    img {
+      object-position: top;
+    }
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  // .hero__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(50);
+    @include adaptiveValue("padding-right", 83, 15, 0, $containerWidth, 991.98);
+    @include adaptiveValue("padding-left", 83, 15, 0, $containerWidth, 991.98);
+    padding-right: toRem(20);
+  }
+  // .hero__content
+  &__content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // .hero__main
+  &__main {
+    display: grid;
+    gap: toRem(24);
+    &:not(:last-child) {
+      margin-bottom: toRem(48);
+    }
+  }
+
+  // .hero__block-header
+  &__block-header {
+    max-width: toRem(673);
+  }
+
+  // .hero__advantages
+  &__advantages {
+  }
+  // .hero__items
+
+  &__items {
+  }
+  // .hero__done
+  &__done {
+    justify-content: center;
+    align-items: center;
+  }
+  // .hero__advantages
+  &__advantages {
+  }
+}
+
+.items-hero {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: toRem(52);
+
+  // .items-hero__item
+  &__item {
+    color: $greyColor;
+    font-weight: 700;
+    line-height: 1.4;
+    position: relative;
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        right: toRem(-25);
+        top: calc(50% - toRem(2));
+        width: toRem(5);
+        height: toRem(5);
+        border-radius: 50%;
+        background-color: $greyColor;
+      }
+    }
+  }
+}
+
+.advantages-hero {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  @include adaptiveValue("gap", 55, 20);
+  @media (max-width: em(1720)) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @media (max-width: $mobile) {
+    grid-template-columns: auto;
+  }
+  // .advantages-hero__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: toRem(16);
+    position: relative;
+    @media (min-width: em(1920)) {
+      &:not(:last-child) {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          @include adaptiveValue("right", -32, -20);
+          height: 100%;
+          width: 1px;
+          background: linear-gradient(
+            0deg,
+            rgba(20, 34, 87, 0) 0%,
+            rgba(79, 102, 183, 1) 50%,
+            rgba(20, 34, 87, 0) 100%
+          );
+        }
+      }
+    }
+  }
+  // .advantages-hero__icon
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    flex: 0 0 toRem(48);
+    height: toRem(48);
+    padding: toRem(5);
+    background-color: $bgColorSemi;
+    img {
+      width: 100%;
+    }
+  }
+  // .advantages-hero__text
+  &__text {
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.33;
+  }
+}
+
+//====================================================================================================

@@ -1,0 +1,61 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.bolck-header {
+  display: grid;
+  gap: toRem(24);
+  // .bolck-header--center
+  &--center {
+    text-align: center;
+  }
+  &--inline {
+    grid-template-columns: minmax(auto, toRem(586)) minmax(auto, toRem(613));
+    justify-content: space-between;
+    align-items: end;
+    gap: toRem(24);
+  }
+  // .bolck-header__title
+  &__title {
+    color: $darkColor;
+    @include adaptiveValue("font-size", 52, 32);
+    font-weight: 700;
+    line-height: 1.23;
+    // .bolck-header__title--big
+    &--big {
+      @include adaptiveValue("font-size", 64, 38);
+    }
+    // .bolck-header__title--white
+    &--white {
+      color: #ffffff;
+    }
+  }
+  // .bolck-header__text
+  &__text {
+    p {
+      line-height: 1.55;
+    }
+  }
+}
+/*
+<div class="bolck-header bolck-header--center">
+	<h2 class="bolck-header__title"></h2>
+	<div class="bolck-header__text">
+		<p></p>
+	</div>
+</div>
+*/
+//========================================================================================================================================================
+
+.done {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: toRem(40);
+  row-gap: toRem(3);
+  // .done__item
+  &__item {
+    color: $bgColorLite;
+    font-size: toRem(20);
+    @include adaptiveValue("font-size", 20, 18);
+    line-height: 1.6; /* 32/20 */
+    background: url("@img/icons/check-blue.svg") left no-repeat;
+    padding-left: toRem(32);
+  }
+}

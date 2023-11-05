@@ -1,0 +1,7 @@
+.hero {
+  display: grid;
+  grid-template-columns: 21.8% 1fr 21.8%;
+}
+.hero__image img {
+  width: 100%;
+}
