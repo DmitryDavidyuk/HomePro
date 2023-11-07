@@ -175,3 +175,80 @@
 }
 
 //====================================================================================================
+
+.about {
+  @include adaptiveValue("padding-top", 123, 40);
+  @include adaptiveValue("padding-bottom", 64, 40);
+  // .about__container
+  &__container {
+    display: grid;
+    row-gap: toRem(30);
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    @media (max-width: $tablet) {
+      grid-template-columns: auto;
+    }
+  }
+  // .about__body
+  &__body {
+    @include adaptiveValue("padding-right", 159, 20, 2, $containerWidth, 991.98);
+  }
+  // .about__bolck-header
+  &__bolck-header {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 54, 30);
+    }
+  }
+  // .about__items
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 32, 15);
+    grid-template-columns: repeat(2, 1fr);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 56, 30);
+    }
+    @media (max-width: em(540)) {
+      grid-template-columns: auto;
+    }
+  }
+  // .about__item
+  &__item {
+    background: url("@img/icons/check-dark.svg") 0 em(10, 25) no-repeat;
+    padding-left: toRem(28);
+    @include adaptiveValue("font-size", 20, 16);
+    font-weight: 700;
+    color: $bgColorSemi;
+    line-height: 1.4;
+  }
+  // .about__info
+  &__info {
+    border-radius: toRem(24);
+    background-color: $bgColorLite;
+    padding: toRem(12) toRem(32);
+    color: #fff;
+    line-height: 155.555556%; /* 28/18 */
+    a {
+      white-space: nowrap;
+      font-size: toRem(20);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    @media (min-width: $tablet) {
+      max-width: toRem(450);
+    }
+  }
+  // .about__image
+  &__image {
+    img {
+      width: 100%;
+    }
+  }
+}
+.bolck-header {
+  // .bolck-header__title
+  &__title {
+  }
+  // .bolck-header__text
+  &__text {
+  }
+}
