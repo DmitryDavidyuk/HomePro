@@ -3,13 +3,17 @@
 
 <head>
 	<title>Home Pro</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231107111648">
-	<link rel="shortcut icon" href="favicon.ico">
+	<meta charset="UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<style>
+		body {
+			opacity: 0;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20231107232328" />
+	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
@@ -23,10 +27,10 @@
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Services</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Our Blog</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Contact </a></li>
+							<li class="menu__item"><a href="#" data-goto=".about" class="menu__link">About Us</a></li>
+							<li class="menu__item"><a href="#" data-goto=".services" class="menu__link">Services</a></li>
+							<li class="menu__item"><a href="#" data-goto=".blog" class="menu__link">Our Blog</a></li>
+							<li class="menu__item"><a href="#" data-goto=".contacts" class="menu__link">Contact </a></li>
 						</ul>
 					</nav>
 				</div>
@@ -35,7 +39,7 @@
 		</header>
 
 		<main class="page">
-			<section class="hero">
+			<section data-watch data-watch-threshold="0.5" class="hero">
 				<div class="hero__image-ibg"><picture><source srcset="img/hero/image-left.webp" type="image/webp"><img src="img/hero/image-left.jpg" alt="image" /></picture></div>
 				<div class="hero__body">
 					<div class="hero__content">
@@ -46,9 +50,7 @@
 								<li class="items-hero__item">Improvements</li>
 							</ul>
 							<div class="hero__block-header bolck-header bolck-header--center">
-								<h1 class="bolck-header__title bolck-header__title--big bolck-header__title--white">
-									Need improvement or repair your home? we can help!
-								</h1>
+								<h1 class="bolck-header__title bolck-header__title--big bolck-header__title--white">Need improvement or repair your home? we can help!</h1>
 							</div>
 							<ul class="hero__done done">
 								<li class="done__item">Free Quotes</li>
@@ -96,16 +98,13 @@
 				</div>
 				<div class="hero__image-ibg"><picture><source srcset="img/hero/image-right.webp" type="image/webp"><img src="img/hero/image-right.jpg" alt="image" /></picture></div>
 			</section>
-			<section class="about">
+			<section data-watch="navigator" data-watch-threshold="0.4" class="about">
 				<div class="about__container">
 					<div class="about__body">
 						<div class="about__bolck-header bolck-header">
 							<h2 class="bolck-header__title">Professional for your home services</h2>
 							<div class="bolck-header__text">
-								<p>
-									You need help for home care? We are home care professionals focused in the US
-									region. We provide several services that support home services
-								</p>
+								<p>You need help for home care? We are home care professionals focused in the US region. We provide several services that support home services</p>
 							</div>
 						</div>
 						<ul class="about__items">
@@ -126,13 +125,175 @@
 					</div>
 				</div>
 			</section>
+			<section data-watch="navigator" data-watch-threshold="0.4" class="services">
+				<div class="services__container">
+					<div class="services__bolck-header bolck-header bolck-header--center">
+						<h2 class="bolck-header__title">Our Services</h2>
+						<div class="bolck-header__text">
+							<p>You have problems with leaking pipes, broken tiles, lost keys or want to tidy up the trees around you, of course you need our help!</p>
+						</div>
+					</div>
+					<div class="services__items">
+						<article class="services__item item-service">
+							<div class="item-service__icon">
+								<img src="img/services/icons/01.svg" alt="icon" />
+							</div>
+							<div class="item-service__title">Plumbing services</div>
+							<div class="item-service__text">
+								<p>Drain pipe leaking, pipe clogged, replace the pipe line</p>
+							</div>
+						</article>
+						<article class="services__item item-service">
+							<div class="item-service__icon">
+								<img src="img/services/icons/02.svg" alt="icon" />
+							</div>
+							<div class="item-service__title">Roofing repair</div>
+							<div class="item-service__text">
+								<p>Roof leaks, tile replacement, roof cleaning and maintenance</p>
+							</div>
+						</article>
+						<article class="services__item item-service">
+							<div class="item-service__icon">
+								<img src="img/services/icons/03.svg" alt="icon" />
+							</div>
+							<div class="item-service__title">Mold Removal</div>
+							<div class="item-service__text">
+								<p>Removing and cleaning mildew, Restoration and Prevention</p>
+							</div>
+						</article>
+						<article class="services__item item-service">
+							<div class="item-service__icon">
+								<img src="img/services/icons/04.svg" alt="icon" />
+							</div>
+							<div class="item-service__title">Tree Trimming</div>
+							<div class="item-service__text">
+								<p>Trimming and cleaning, Deadwood removal, Tree shaping</p>
+							</div>
+						</article>
+						<article class="services__item item-service">
+							<div class="item-service__icon">
+								<img src="img/services/icons/05.svg" alt="icon" />
+							</div>
+							<div class="item-service__title">Appliance Repair</div>
+							<div class="item-service__text">
+								<p>repair of washing machines, refrigerators, Air conditioner, etc</p>
+							</div>
+						</article>
+						<article class="services__item item-service">
+							<div class="item-service__icon">
+								<img src="img/services/icons/06.svg" alt="icon" />
+							</div>
+							<div class="item-service__title">Bathroom Remodeling</div>
+							<div class="item-service__text">
+								<p>Design and Consulting, installation, Repairing, tile repair</p>
+							</div>
+						</article>
+						<article class="services__item item-service">
+							<div class="item-service__icon">
+								<img src="img/services/icons/07.svg" alt="icon" />
+							</div>
+							<div class="item-service__title">Locksmith</div>
+							<div class="item-service__text">
+								<p>Lock Installation and Repair, Duplication, Lock Rekeying</p>
+							</div>
+						</article>
+						<article class="services__item item-service item-service--blue">
+							<div class="item-service__title">More service?</div>
+							<div class="item-service__text">
+								<p>You can tell us what you need and we can help!</p>
+							</div>
+							<a href="" class="item-service__button button button--fw button--white button--min">Call Us Now</a>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section data-watch class="advantages">
+				<div class="advantages__body">
+					<div class="advantages__container">
+						<div class="advantages__bolck-header bolck-header bolck-header--inline">
+							<h2 class="bolck-header__title bolck-header__title--white">Fast, Friendly, and Satisfaction Guarantee</h2>
+							<div class="bolck-header__text">
+								<p>No matter how big or small your work is, whether it's for the interior or exterior of your home, we are ready to serve and help you solve your home problems.</p>
+							</div>
+						</div>
+						<div class="advantages__items">
+							<div class="advantages__item item-advantages">
+								<div class="item-advantages__icon">
+									<img src="img/advantages/01.svg" alt="image" />
+								</div>
+								<div class="item-advantages__body">
+									<h4 class="item-advantages__title">Satisfaction Guarantee</h4>
+									<div class="item-advantages__text">
+										<p>you don't need to worry about scams or our performance results. our company has been verified and strives for optimal results</p>
+									</div>
+								</div>
+							</div>
+							<div class="advantages__item item-advantages">
+								<div class="item-advantages__icon">
+									<img src="img/advantages/02.svg" alt="image" />
+								</div>
+								<div class="item-advantages__body">
+									<h4 class="item-advantages__title">Free Quotes</h4>
+									<div class="item-advantages__text">
+										<p>Get personalized cost estimates without any obligation. Experience transparency and peace of mind as you explore our service.</p>
+									</div>
+								</div>
+							</div>
+							<div class="advantages__item item-advantages">
+								<div class="item-advantages__icon">
+									<img src="img/advantages/03.svg" alt="image" />
+								</div>
+								<div class="item-advantages__body">
+									<h4 class="item-advantages__title">Local Professionals</h4>
+									<div class="item-advantages__text">
+										<p>Our services cover the Nationwide, US area, including urban, suburban, and rural locations for both long and short term maintenance</p>
+									</div>
+								</div>
+							</div>
+							<div class="advantages__item item-advantages">
+								<div class="item-advantages__icon">
+									<img src="img/advantages/04.svg" alt="image" />
+								</div>
+								<div class="item-advantages__body">
+									<h4 class="item-advantages__title">Fast 24-Hour Service</h4>
+									<div class="item-advantages__text">
+										<p>need fast handling for repairs to drains, leaks or something else? Our experts are available anytime to help you solve the problem</p>
+									</div>
+								</div>
+							</div>
+							<div class="advantages__item item-advantages">
+								<div class="item-advantages__icon">
+									<img src="img/advantages/05.svg" alt="image" />
+								</div>
+								<div class="item-advantages__body">
+									<h4 class="item-advantages__title">Flexible Appointments</h4>
+									<div class="item-advantages__text">
+										<p>We offer convenient appointment times that can accommodate your busy schedule, day or night, 7 days a week.</p>
+									</div>
+								</div>
+							</div>
+							<div class="advantages__item item-advantages">
+								<div class="item-advantages__icon">
+									<img src="img/advantages/06.svg" alt="image" />
+								</div>
+								<div class="item-advantages__body">
+									<h4 class="item-advantages__title">100% Commitment-Free</h4>
+									<div class="item-advantages__text">
+										<p>You are free to ask us about the problems you are facing. We offer a no-commitment approach to put your mind at ease</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231107111648"></script>
+	<script src="js/app.min.js?_v=20231107232328"></script>
 </body>
 
 </html>
