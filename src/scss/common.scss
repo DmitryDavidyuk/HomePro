@@ -1,7 +1,7 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .bolck-header {
   display: grid;
-  gap: toRem(24);
+  @include adaptiveValue("gap", 24, 15);
   // .bolck-header--center
   &--center {
     text-align: center;
@@ -10,7 +10,9 @@
     grid-template-columns: minmax(auto, toRem(586)) minmax(auto, toRem(613));
     justify-content: space-between;
     align-items: end;
-    gap: toRem(24);
+    @media (max-width: $tablet) {
+      grid-template-columns: auto;
+    }
   }
   // .bolck-header__title
   &__title {
@@ -26,11 +28,30 @@
     &--white {
       color: #ffffff;
     }
+
+    transform: translate(0, 15%);
+    opacity: 0;
+    transition:
+      transform 0.6s,
+      opacity 0.6s;
+    ._watcher-view & {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
   }
   // .bolck-header__text
   &__text {
     p {
       line-height: 1.55;
+    }
+    transform: translate(0, 15%);
+    opacity: 0;
+    transition:
+      transform 0.6s 0.3s,
+      opacity 0.6s 0.3s;
+    ._watcher-view & {
+      transform: translate(0, 0);
+      opacity: 1;
     }
   }
 }
@@ -59,3 +80,5 @@
     padding-left: toRem(32);
   }
 }
+
+//========================================================================================================================================================

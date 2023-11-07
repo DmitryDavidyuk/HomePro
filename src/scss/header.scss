@@ -113,10 +113,14 @@
     font-weight: 700;
     line-height: 1.33; /* 24/18 */
     color: #fff;
+    transition: all 0.3s;
     @media (any-hover: hover) {
       &:hover {
         text-decoration: underline;
       }
+    }
+    &._navigator-active {
+      text-decoration: underline;
     }
   }
 }

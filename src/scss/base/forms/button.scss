@@ -19,9 +19,14 @@
       background-color: $bgColorSemi;
     }
   }
-  &--whit {
+  &--white {
+    background-color: #fff;
+    color: $bgColorLite;
   }
   &--min {
+    font-size: toRem(24);
+    font-weight: 700;
+    line-height: 133.333333%; /* 32/24 */
   }
   &--icon {
     span {
