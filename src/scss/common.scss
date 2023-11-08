@@ -1,59 +1,59 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .bolck-header {
-  display: grid;
-  @include adaptiveValue("gap", 24, 15);
-  // .bolck-header--center
-  &--center {
-    text-align: center;
-  }
-  &--inline {
-    grid-template-columns: minmax(auto, toRem(586)) minmax(auto, toRem(613));
-    justify-content: space-between;
-    align-items: end;
-    @media (max-width: $tablet) {
-      grid-template-columns: auto;
-    }
-  }
-  // .bolck-header__title
-  &__title {
-    color: $darkColor;
-    @include adaptiveValue("font-size", 52, 32);
-    font-weight: 700;
-    line-height: 1.23;
-    // .bolck-header__title--big
-    &--big {
-      @include adaptiveValue("font-size", 64, 38);
-    }
-    // .bolck-header__title--white
-    &--white {
-      color: #ffffff;
-    }
+   display: grid;
+   @include adaptiveValue("gap", 24, 15);
+   // .bolck-header--center
+   &--center {
+      text-align: center;
+   }
+   &--inline {
+      grid-template-columns: minmax(auto, toRem(586)) minmax(auto, toRem(613));
+      justify-content: space-between;
+      align-items: end;
+      @media (max-width: $tablet) {
+         grid-template-columns: auto;
+      }
+   }
+   // .bolck-header__title
+   &__title {
+      color: $darkColor;
+      @include adaptiveValue("font-size", 52, 32);
+      font-weight: 700;
+      line-height: 1.23;
+      // .bolck-header__title--big
+      &--big {
+         @include adaptiveValue("font-size", 64, 38);
+      }
+      // .bolck-header__title--white
+      &--white {
+         color: #ffffff;
+      }
 
-    transform: translate(0, 15%);
-    opacity: 0;
-    transition:
-      transform 0.6s,
-      opacity 0.6s;
-    ._watcher-view & {
-      transform: translate(0, 0);
-      opacity: 1;
-    }
-  }
-  // .bolck-header__text
-  &__text {
-    p {
-      line-height: 1.55;
-    }
-    transform: translate(0, 15%);
-    opacity: 0;
-    transition:
-      transform 0.6s 0.3s,
-      opacity 0.6s 0.3s;
-    ._watcher-view & {
-      transform: translate(0, 0);
-      opacity: 1;
-    }
-  }
+      transform: translate(0, 15%);
+      opacity: 0;
+      transition:
+         transform 0.6s,
+         opacity 0.6s;
+      ._watcher-view & {
+         transform: translate(0, 0);
+         opacity: 1;
+      }
+   }
+   // .bolck-header__text
+   &__text {
+      p {
+         line-height: 1.55;
+      }
+      transform: translate(0, 15%);
+      opacity: 0;
+      transition:
+         transform 0.6s 0.3s,
+         opacity 0.6s 0.3s;
+      ._watcher-view & {
+         transform: translate(0, 0);
+         opacity: 1;
+      }
+   }
 }
 /*
 <div class="bolck-header bolck-header--center">
@@ -65,25 +65,30 @@
 */
 //========================================================================================================================================================
 .text {
-  line-height: 155.555556%; /* 28/18 */
+   line-height: 155.555556%; /* 28/18 */
+   p {
+      &:not(:last-child) {
+         margin-bottom: 15px;
+      }
+   }
 }
 
 //========================================================================================================================================================
 
 .done {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: toRem(40);
-  row-gap: toRem(3);
-  // .done__item
-  &__item {
-    color: $bgColorLite;
-    font-size: toRem(20);
-    @include adaptiveValue("font-size", 20, 18);
-    line-height: 1.6; /* 32/20 */
-    background: url("@img/icons/check-blue.svg") left no-repeat;
-    padding-left: toRem(32);
-  }
+   display: flex;
+   flex-wrap: wrap;
+   column-gap: toRem(40);
+   row-gap: toRem(3);
+   // .done__item
+   &__item {
+      color: $bgColorLite;
+      font-size: toRem(20);
+      @include adaptiveValue("font-size", 20, 18);
+      line-height: 1.6; /* 32/20 */
+      background: url("@img/icons/check-blue.svg") left no-repeat;
+      padding-left: toRem(32);
+   }
 }
 
 //========================================================================================================================================================
