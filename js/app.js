@@ -3855,6 +3855,57 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
+    const blogitems = document.querySelector(".blog__items");
+    if (blogitems) loadBlogItems();
+    let data;
+    let startItem = 0;
+    let endItem = 3;
+    async function loadBlogItems() {
+        const response = await fetch("files/blog.json", {
+            method: "GET"
+        });
+        if (response.ok) {
+            const responseResult = await response.json();
+            data = responseResult;
+            initBlog(data, startItem, endItem);
+        } else alert("Error!");
+    }
+    function initBlog(data, startItem, endItem) {
+        const dataPart = data.items.slice(startItem, endItem);
+        dataPart.forEach((item => {
+            buildBlogItem(item);
+        }));
+        viewMore();
+    }
+    function buildBlogItem(item) {
+        let blogItemTemplate = ``;
+        blogItemTemplate += `<article class="blog__item item-blog">`;
+        item.image ? blogItemTemplate += `\n\t<a href="${item.url}" class="item-blog__image-ibg">\n\t\t<img src="${item.image}" alt="image" />\n\t</a>\n\t` : null;
+        blogItemTemplate += `<div class="item-blog__date">${item.date}</div>`;
+        blogItemTemplate += `\n\t\t<h4 class="item-blog__title">\n      \t<a href="${item.url}" class="item-blog__link-title">${item.title}</a>\n      </h4>`;
+        item.text ? blogItemTemplate += `\n\t\t<div class="item-blog__text text">\n\t\t\t${item.text}\n\t\t</div>` : null;
+        if (item.tags) {
+            blogItemTemplate += `<div class="item-blog__tags">`;
+            for (const tag in item.tags) blogItemTemplate += `<a href="${item.tags[tag]}" class="item-blog__tag">${tag}</a>`;
+            blogItemTemplate += `</div>`;
+        }
+        blogItemTemplate += `</article>`;
+        blogitems.insertAdjacentHTML("beforeend", blogItemTemplate);
+    }
+    function viewMore() {
+        const dataItemsLength = data.items.length;
+        const currentItems = document.querySelectorAll(".item-blog").length;
+        const viewMore = document.querySelector(".blog__view-more");
+        currentItems < dataItemsLength ? viewMore.hidden = false : viewMore.hidden = true;
+    }
+    document.addEventListener("click", (e => {
+        if (e.target.closest(".blog__view-more")) {
+            startItem = document.querySelectorAll(".item-blog").length;
+            endItem = startItem + 3;
+            initBlog(data, startItem, endItem);
+            e.preventDefault();
+        }
+    }));
     window["FLS"] = true;
     isWebp();
     addLoadedClass();
