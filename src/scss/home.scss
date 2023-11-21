@@ -813,3 +813,109 @@
       }
    }
 }
+
+//========================================================================================================================================================
+.questions {
+   @include adaptiveValue("padding-top", 190, 40);
+   @include adaptiveValue("padding-bottom", 230, 40);
+   // .questions__container
+   &__container {
+      display: grid;
+      grid-template-columns: auto 57.847222%;
+      align-items: start;
+      column-gap: toRem(20);
+      row-gap: toRem(30);
+      @media (max-width: $tablet) {
+         grid-template-columns: auto;
+      }
+   }
+   // .questions__block-header
+   &__block-header {
+   }
+   // .questions__spollers
+   &__spollers {
+   }
+}
+
+.spollers-questions {
+   display: grid;
+   gap: toRem(12);
+   // align-items: start;
+   // .spollers-questions__item
+   &__item {
+      border-radius: toRem(12);
+      transition: background-color 0.5s;
+      padding: toRem(24) toRem(32);
+      &[open] {
+         background-color: #f3f5f9;
+      }
+      @media (max-width: $mobileSmall) {
+         padding: toRem(15) toRem(24);
+      }
+
+      opacity: 0;
+      transform: translate(0px, 15%);
+      transition:
+         opacity 0.5s,
+         transform 0.5s;
+      ._watcher-view & {
+         opacity: 1;
+         transform: translate(0, 0);
+         @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+               $startDelay: 0.5;
+               $delay: $i * 0.1 + $startDelay;
+               transition-delay: #{$delay}s;
+            }
+         }
+      }
+   }
+   // .spollers-questions__title
+   &__title {
+      line-height: 120%;
+      transition: all 0.3s;
+      list-style: none;
+      font-weight: 700;
+      padding-right: toRem(30);
+      @include adaptiveValue("font-size", 24, 18);
+
+      &::marker {
+         display: none;
+      }
+      ._spoller-init & {
+         position: relative;
+         cursor: pointer;
+         &::before,
+         &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            background-color: #1f3584;
+            height: toRem(2);
+            width: toRem(15);
+            transition: transform 0.5s ease 0s;
+         }
+         &::before {
+            transform: translate(-75%, -50%) rotate(44deg);
+         }
+         &::after {
+            transform: translate(0, -50%) rotate(-44deg);
+         }
+         &._spoller-active {
+            &::before {
+               transform: translateX(-75%) rotate(-44deg);
+            }
+            &::after {
+               transform: rotate(44deg);
+            }
+         }
+      }
+   }
+   // .spollers-questions__body
+   &__body {
+      font-size: toRem(16);
+      line-height: 150%; /* 24/16 */
+      padding-top: toRem(16);
+   }
+}

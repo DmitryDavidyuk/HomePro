@@ -2,6 +2,7 @@
 .bolck-header {
    display: grid;
    @include adaptiveValue("gap", 24, 15);
+
    // .bolck-header--center
    &--center {
       text-align: center;
@@ -41,9 +42,6 @@
    }
    // .bolck-header__text
    &__text {
-      p {
-         line-height: 1.55;
-      }
       transform: translate(0, 15%);
       opacity: 0;
       transition:
@@ -52,6 +50,19 @@
       ._watcher-view & {
          transform: translate(0, 0);
          opacity: 1;
+      }
+      p {
+         line-height: 1.55;
+      }
+      a {
+         font-weight: 700;
+         color: $bgColorLite;
+         text-decoration: underline;
+         @media (any-hover: hover) {
+            &:hover {
+               text-decoration: none;
+            }
+         }
       }
    }
 }
