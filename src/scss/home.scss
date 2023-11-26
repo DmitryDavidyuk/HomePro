@@ -919,3 +919,68 @@
       padding-top: toRem(16);
    }
 }
+
+//========================================================================================================================================================
+.talk {
+   background-color: $bgColor;
+   position: relative;
+
+   // .talk__container
+   &__container {
+      @media (min-width: $tablet) {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         @include adaptiveValue("gap", 100, 30);
+      }
+   }
+   // .talk__content
+   &__content {
+      position: relative;
+      @include adaptiveValue("padding-top", 165, 20);
+      @include adaptiveValue("padding-bottom", 105, 20);
+      &::before {
+         content: "";
+         background: url("@img/talk/decor.svg") 0 0 / 83% no-repeat;
+         position: absolute;
+         width: 100%;
+         aspect-ratio: 581 / 44;
+         left: 0;
+         top: 0;
+      }
+   }
+   // .talk__block-header
+   &__block-header {
+      &:not(:last-child) {
+         margin-bottom: toRem(24);
+      }
+   }
+   // .talk__done
+   &__done {
+      &:not(:last-child) {
+         margin-bottom: toRem(36);
+      }
+   }
+   // .talk__button
+   &__button {
+   }
+   // .talk__image
+   &__image {
+      img {
+         max-width: 100%;
+      }
+      @media (min-width: $tablet) {
+         pointer-events: none;
+         position: absolute;
+         right: 0;
+         bottom: 0;
+         width: 100%;
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         @include adaptiveValue("gap", 100, 30);
+         img {
+            grid-column: 2 / 3;
+            justify-self: end;
+         }
+      }
+   }
+}
